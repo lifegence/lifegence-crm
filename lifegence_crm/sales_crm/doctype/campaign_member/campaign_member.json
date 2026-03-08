@@ -1,0 +1,61 @@
+{
+	"actions": [],
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"member_type",
+		"member_name",
+		"column_break_member",
+		"status",
+		"response_date"
+	],
+	"fields": [
+		{
+			"fieldname": "member_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Member Type",
+			"options": "Lead\nCustomer\nContact",
+			"reqd": 1
+		},
+		{
+			"fieldname": "member_name",
+			"fieldtype": "Dynamic Link",
+			"in_list_view": 1,
+			"label": "Member Name",
+			"options": "member_type",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_member",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "Invited",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Invited\nAttended\nDeclined\nNo Show"
+		},
+		{
+			"fieldname": "response_date",
+			"fieldtype": "Date",
+			"label": "Response Date"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"istable": 1,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Campaign Member",
+	"owner": "Administrator",
+	"permissions": [],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 0
+}

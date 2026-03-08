@@ -1,0 +1,101 @@
+{
+	"actions": [],
+	"autoname": "field:rule_name",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"rule_section",
+		"rule_name",
+		"event",
+		"column_break_rule",
+		"is_active",
+		"notify_owner",
+		"recipients_section",
+		"additional_recipients",
+		"channel"
+	],
+	"fields": [
+		{
+			"fieldname": "rule_section",
+			"fieldtype": "Section Break",
+			"label": "Rule"
+		},
+		{
+			"fieldname": "rule_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Rule Name",
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"fieldname": "event",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Event",
+			"options": "Deal Stage Changed\nDeal Created\nActivity Due\nLead Score Changed\nDeal Won\nDeal Lost",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_rule",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "1",
+			"fieldname": "is_active",
+			"fieldtype": "Check",
+			"label": "Is Active"
+		},
+		{
+			"default": "1",
+			"fieldname": "notify_owner",
+			"fieldtype": "Check",
+			"label": "Notify Owner"
+		},
+		{
+			"fieldname": "recipients_section",
+			"fieldtype": "Section Break",
+			"label": "Recipients"
+		},
+		{
+			"description": "Comma-separated emails",
+			"fieldname": "additional_recipients",
+			"fieldtype": "Small Text",
+			"label": "Additional Recipients"
+		},
+		{
+			"default": "System Notification",
+			"fieldname": "channel",
+			"fieldtype": "Select",
+			"label": "Channel",
+			"options": "Email\nSystem Notification\nBoth"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "CRM Notification Rule",
+	"naming_rule": "By fieldname",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

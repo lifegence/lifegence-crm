@@ -1,0 +1,129 @@
+{
+	"actions": [],
+	"autoname": "format:MTG-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"meeting_section",
+		"meeting_title",
+		"meeting_date",
+		"column_break_meeting",
+		"deal",
+		"customer",
+		"attendees_section",
+		"attendees",
+		"content_section",
+		"agenda",
+		"minutes",
+		"action_items"
+	],
+	"fields": [
+		{
+			"fieldname": "meeting_section",
+			"fieldtype": "Section Break",
+			"label": "Meeting"
+		},
+		{
+			"fieldname": "meeting_title",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Meeting Title",
+			"reqd": 1
+		},
+		{
+			"default": "Today",
+			"fieldname": "meeting_date",
+			"fieldtype": "Date",
+			"in_list_view": 1,
+			"label": "Meeting Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_meeting",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "deal",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Deal",
+			"options": "Deal"
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Customer",
+			"options": "Customer"
+		},
+		{
+			"fieldname": "attendees_section",
+			"fieldtype": "Section Break",
+			"label": "Attendees"
+		},
+		{
+			"description": "Comma-separated names",
+			"fieldname": "attendees",
+			"fieldtype": "Small Text",
+			"label": "Attendees"
+		},
+		{
+			"fieldname": "content_section",
+			"fieldtype": "Section Break",
+			"label": "Content"
+		},
+		{
+			"fieldname": "agenda",
+			"fieldtype": "Text Editor",
+			"label": "Agenda"
+		},
+		{
+			"fieldname": "minutes",
+			"fieldtype": "Text Editor",
+			"label": "Minutes"
+		},
+		{
+			"fieldname": "action_items",
+			"fieldtype": "Text Editor",
+			"label": "Action Items"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Meeting Note",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales User",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "meeting_title",
+	"track_changes": 1
+}

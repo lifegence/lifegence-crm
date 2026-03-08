@@ -1,0 +1,101 @@
+{
+	"actions": [],
+	"autoname": "format:LSR-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"rule_section",
+		"rule_name",
+		"field_name",
+		"column_break_rule",
+		"operator",
+		"field_value",
+		"score_section",
+		"score",
+		"is_active"
+	],
+	"fields": [
+		{
+			"fieldname": "rule_section",
+			"fieldtype": "Section Break",
+			"label": "Rule"
+		},
+		{
+			"fieldname": "rule_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Rule Name",
+			"reqd": 1
+		},
+		{
+			"description": "Lead field to evaluate",
+			"fieldname": "field_name",
+			"fieldtype": "Data",
+			"label": "Field Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_rule",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "operator",
+			"fieldtype": "Select",
+			"label": "Operator",
+			"options": "equals\ncontains\ngreater than\nless than\nis set\nis not set",
+			"reqd": 1
+		},
+		{
+			"fieldname": "field_value",
+			"fieldtype": "Data",
+			"label": "Field Value"
+		},
+		{
+			"fieldname": "score_section",
+			"fieldtype": "Section Break",
+			"label": "Score"
+		},
+		{
+			"description": "Points to add/subtract",
+			"fieldname": "score",
+			"fieldtype": "Int",
+			"in_list_view": 1,
+			"label": "Score",
+			"reqd": 1
+		},
+		{
+			"default": "1",
+			"fieldname": "is_active",
+			"fieldtype": "Check",
+			"label": "Is Active"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Lead Scoring Rule",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "rule_name",
+	"track_changes": 1
+}

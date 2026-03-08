@@ -1,0 +1,207 @@
+{
+	"actions": [],
+	"autoname": "format:DEAL-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"deal_section",
+		"deal_name",
+		"customer",
+		"column_break_deal",
+		"stage",
+		"deal_owner",
+		"value_section",
+		"deal_value",
+		"currency",
+		"column_break_value",
+		"probability",
+		"weighted_value",
+		"timeline_section",
+		"expected_close_date",
+		"source",
+		"column_break_timeline",
+		"lead",
+		"contact_person",
+		"notes_section",
+		"description",
+		"result_section",
+		"close_date",
+		"lost_reason"
+	],
+	"fields": [
+		{
+			"fieldname": "deal_section",
+			"fieldtype": "Section Break",
+			"label": "Deal"
+		},
+		{
+			"fieldname": "deal_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Deal Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Customer",
+			"options": "Customer"
+		},
+		{
+			"fieldname": "column_break_deal",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "stage",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Stage",
+			"options": "Deal Stage",
+			"reqd": 1
+		},
+		{
+			"default": "__user",
+			"fieldname": "deal_owner",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Deal Owner",
+			"options": "User"
+		},
+		{
+			"fieldname": "value_section",
+			"fieldtype": "Section Break",
+			"label": "Value"
+		},
+		{
+			"fieldname": "deal_value",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Deal Value"
+		},
+		{
+			"default": "JPY",
+			"fieldname": "currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency"
+		},
+		{
+			"fieldname": "column_break_value",
+			"fieldtype": "Column Break"
+		},
+		{
+			"description": "Auto from Deal Stage",
+			"fieldname": "probability",
+			"fieldtype": "Percent",
+			"label": "Probability",
+			"read_only": 1
+		},
+		{
+			"description": "deal_value x probability",
+			"fieldname": "weighted_value",
+			"fieldtype": "Currency",
+			"label": "Weighted Value",
+			"read_only": 1
+		},
+		{
+			"fieldname": "timeline_section",
+			"fieldtype": "Section Break",
+			"label": "Timeline"
+		},
+		{
+			"fieldname": "expected_close_date",
+			"fieldtype": "Date",
+			"in_list_view": 1,
+			"label": "Expected Close Date"
+		},
+		{
+			"fieldname": "source",
+			"fieldtype": "Select",
+			"label": "Source",
+			"options": "Web\nReferral\nCold Call\nExhibition\nPartner\nOther"
+		},
+		{
+			"fieldname": "column_break_timeline",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "lead",
+			"fieldtype": "Link",
+			"label": "Lead",
+			"options": "Lead"
+		},
+		{
+			"fieldname": "contact_person",
+			"fieldtype": "Link",
+			"label": "Contact Person",
+			"options": "Contact"
+		},
+		{
+			"fieldname": "notes_section",
+			"fieldtype": "Section Break",
+			"label": "Notes"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Text Editor",
+			"label": "Description"
+		},
+		{
+			"fieldname": "result_section",
+			"fieldtype": "Section Break",
+			"label": "Result"
+		},
+		{
+			"fieldname": "close_date",
+			"fieldtype": "Date",
+			"label": "Close Date"
+		},
+		{
+			"depends_on": "eval:doc.stage && frappe.db.get_value('Deal Stage', doc.stage, 'is_lost')",
+			"fieldname": "lost_reason",
+			"fieldtype": "Small Text",
+			"label": "Lost Reason"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Deal",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales User",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"search_fields": "deal_name,customer,stage",
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "deal_name",
+	"track_changes": 1
+}

@@ -1,0 +1,128 @@
+{
+	"actions": [],
+	"autoname": "format:CALL-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"call_section",
+		"call_type",
+		"call_datetime",
+		"column_break_call",
+		"duration_sec",
+		"phone_number",
+		"related_section",
+		"deal",
+		"customer",
+		"contact",
+		"notes_section",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "call_section",
+			"fieldtype": "Section Break",
+			"label": "Call"
+		},
+		{
+			"fieldname": "call_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Call Type",
+			"options": "Inbound\nOutbound\nMissed",
+			"reqd": 1
+		},
+		{
+			"default": "Now",
+			"fieldname": "call_datetime",
+			"fieldtype": "Datetime",
+			"in_list_view": 1,
+			"label": "Call Datetime",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_call",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "duration_sec",
+			"fieldtype": "Int",
+			"label": "Duration (sec)"
+		},
+		{
+			"fieldname": "phone_number",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Phone Number"
+		},
+		{
+			"fieldname": "related_section",
+			"fieldtype": "Section Break",
+			"label": "Related"
+		},
+		{
+			"fieldname": "deal",
+			"fieldtype": "Link",
+			"label": "Deal",
+			"options": "Deal"
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Customer",
+			"options": "Customer"
+		},
+		{
+			"fieldname": "contact",
+			"fieldtype": "Link",
+			"label": "Contact",
+			"options": "Contact"
+		},
+		{
+			"fieldname": "notes_section",
+			"fieldtype": "Section Break"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Notes"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Call Log CRM",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales User",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

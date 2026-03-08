@@ -1,0 +1,161 @@
+{
+	"actions": [],
+	"autoname": "format:CAMP-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"campaign_section",
+		"campaign_name",
+		"campaign_type",
+		"column_break_campaign",
+		"start_date",
+		"end_date",
+		"status",
+		"budget_section",
+		"budget",
+		"actual_cost",
+		"column_break_budget",
+		"expected_leads",
+		"actual_leads",
+		"members_section",
+		"members",
+		"description_section",
+		"description"
+	],
+	"fields": [
+		{
+			"fieldname": "campaign_section",
+			"fieldtype": "Section Break",
+			"label": "Campaign"
+		},
+		{
+			"fieldname": "campaign_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Campaign Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "campaign_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Campaign Type",
+			"options": "Email\nEvent\nWebinar\nAd\nOther",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_campaign",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "start_date",
+			"fieldtype": "Date",
+			"label": "Start Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "end_date",
+			"fieldtype": "Date",
+			"label": "End Date"
+		},
+		{
+			"default": "Planning",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Planning\nActive\nCompleted\nCancelled"
+		},
+		{
+			"fieldname": "budget_section",
+			"fieldtype": "Section Break",
+			"label": "Budget"
+		},
+		{
+			"fieldname": "budget",
+			"fieldtype": "Currency",
+			"label": "Budget"
+		},
+		{
+			"fieldname": "actual_cost",
+			"fieldtype": "Currency",
+			"label": "Actual Cost",
+			"read_only": 1
+		},
+		{
+			"fieldname": "column_break_budget",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "expected_leads",
+			"fieldtype": "Int",
+			"label": "Expected Leads"
+		},
+		{
+			"fieldname": "actual_leads",
+			"fieldtype": "Int",
+			"label": "Actual Leads",
+			"read_only": 1
+		},
+		{
+			"fieldname": "members_section",
+			"fieldtype": "Section Break",
+			"label": "Members"
+		},
+		{
+			"fieldname": "members",
+			"fieldtype": "Table",
+			"label": "Members",
+			"options": "Campaign Member"
+		},
+		{
+			"fieldname": "description_section",
+			"fieldtype": "Section Break",
+			"label": "Description"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Text Editor",
+			"label": "Description"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Campaign",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales User",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "campaign_name",
+	"track_changes": 1
+}

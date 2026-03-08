@@ -1,0 +1,169 @@
+{
+	"actions": [],
+	"autoname": "format:ACT-{####}",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"activity_section",
+		"activity_type",
+		"subject",
+		"column_break_activity",
+		"activity_date",
+		"duration_min",
+		"related_section",
+		"deal",
+		"customer",
+		"lead",
+		"column_break_related",
+		"contact",
+		"assigned_to",
+		"details_section",
+		"notes",
+		"followup_section",
+		"next_action",
+		"next_action_date"
+	],
+	"fields": [
+		{
+			"fieldname": "activity_section",
+			"fieldtype": "Section Break",
+			"label": "Activity"
+		},
+		{
+			"fieldname": "activity_type",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Activity Type",
+			"options": "電話\nメール\n訪問\n打合せ\nその他",
+			"reqd": 1
+		},
+		{
+			"fieldname": "subject",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Subject",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_activity",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "Now",
+			"fieldname": "activity_date",
+			"fieldtype": "Datetime",
+			"in_list_view": 1,
+			"label": "Activity Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "duration_min",
+			"fieldtype": "Int",
+			"label": "Duration (min)"
+		},
+		{
+			"fieldname": "related_section",
+			"fieldtype": "Section Break",
+			"label": "Related"
+		},
+		{
+			"fieldname": "deal",
+			"fieldtype": "Link",
+			"label": "Deal",
+			"options": "Deal"
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Customer",
+			"options": "Customer"
+		},
+		{
+			"fieldname": "lead",
+			"fieldtype": "Link",
+			"label": "Lead",
+			"options": "Lead"
+		},
+		{
+			"fieldname": "column_break_related",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "contact",
+			"fieldtype": "Link",
+			"label": "Contact",
+			"options": "Contact"
+		},
+		{
+			"default": "__user",
+			"fieldname": "assigned_to",
+			"fieldtype": "Link",
+			"label": "Assigned To",
+			"options": "User"
+		},
+		{
+			"fieldname": "details_section",
+			"fieldtype": "Section Break",
+			"label": "Details"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Text Editor",
+			"label": "Notes"
+		},
+		{
+			"fieldname": "followup_section",
+			"fieldtype": "Section Break",
+			"label": "Follow-up"
+		},
+		{
+			"fieldname": "next_action",
+			"fieldtype": "Data",
+			"label": "Next Action"
+		},
+		{
+			"fieldname": "next_action_date",
+			"fieldtype": "Date",
+			"label": "Next Action Date"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Activity",
+	"naming_rule": "Expression (new)",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales User",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"title_field": "subject",
+	"track_changes": 1
+}

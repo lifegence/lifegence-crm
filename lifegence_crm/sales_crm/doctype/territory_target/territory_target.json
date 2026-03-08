@@ -1,0 +1,104 @@
+{
+	"actions": [],
+	"autoname": "hash",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"target_section",
+		"territory",
+		"fiscal_year",
+		"column_break_target",
+		"target_amount",
+		"achieved_amount",
+		"details_section",
+		"sales_person",
+		"target_type"
+	],
+	"fields": [
+		{
+			"fieldname": "target_section",
+			"fieldtype": "Section Break",
+			"label": "Target"
+		},
+		{
+			"fieldname": "territory",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Territory",
+			"options": "Territory",
+			"reqd": 1
+		},
+		{
+			"fieldname": "fiscal_year",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Fiscal Year",
+			"options": "Fiscal Year",
+			"reqd": 1
+		},
+		{
+			"fieldname": "column_break_target",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "target_amount",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Target Amount",
+			"reqd": 1
+		},
+		{
+			"fieldname": "achieved_amount",
+			"fieldtype": "Currency",
+			"label": "Achieved Amount",
+			"read_only": 1
+		},
+		{
+			"fieldname": "details_section",
+			"fieldtype": "Section Break"
+		},
+		{
+			"fieldname": "sales_person",
+			"fieldtype": "Link",
+			"label": "Sales Person",
+			"options": "Sales Person"
+		},
+		{
+			"default": "Revenue",
+			"fieldname": "target_type",
+			"fieldtype": "Select",
+			"label": "Target Type",
+			"options": "Revenue\nDeal Count\nNew Customers"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Territory Target",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"read": 1,
+			"role": "Sales User"
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

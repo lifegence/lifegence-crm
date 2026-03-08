@@ -1,0 +1,87 @@
+{
+	"actions": [],
+	"autoname": "field:stage_name",
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"stage_name",
+		"probability",
+		"sort_order",
+		"color",
+		"is_won",
+		"is_lost"
+	],
+	"fields": [
+		{
+			"fieldname": "stage_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Stage Name",
+			"reqd": 1,
+			"unique": 1
+		},
+		{
+			"fieldname": "probability",
+			"fieldtype": "Percent",
+			"in_list_view": 1,
+			"label": "Probability",
+			"reqd": 1
+		},
+		{
+			"default": "0",
+			"fieldname": "sort_order",
+			"fieldtype": "Int",
+			"in_list_view": 1,
+			"label": "Sort Order"
+		},
+		{
+			"default": "#3498db",
+			"fieldname": "color",
+			"fieldtype": "Color",
+			"label": "Color"
+		},
+		{
+			"default": "0",
+			"fieldname": "is_won",
+			"fieldtype": "Check",
+			"label": "Is Won"
+		},
+		{
+			"default": "0",
+			"fieldname": "is_lost",
+			"fieldtype": "Check",
+			"label": "Is Lost"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "Deal Stage",
+	"naming_rule": "By fieldname",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Sales Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"read": 1,
+			"role": "Sales User"
+		}
+	],
+	"sort_field": "sort_order",
+	"sort_order": "ASC",
+	"states": [],
+	"track_changes": 1
+}

@@ -1,0 +1,124 @@
+{
+	"actions": [],
+	"creation": "2026-03-08 00:00:00.000000",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"pipeline_section",
+		"default_pipeline",
+		"enable_weighted_forecast",
+		"column_break_pipeline",
+		"deal_auto_numbering",
+		"lead_scoring_section",
+		"enable_lead_scoring",
+		"min_score_for_hot",
+		"column_break_scoring",
+		"scoring_recalculate_frequency",
+		"reminders_section",
+		"auto_activity_reminder",
+		"reminder_days_before"
+	],
+	"fields": [
+		{
+			"fieldname": "pipeline_section",
+			"fieldtype": "Section Break",
+			"label": "Pipeline"
+		},
+		{
+			"default": "標準パイプライン",
+			"fieldname": "default_pipeline",
+			"fieldtype": "Data",
+			"label": "Default Pipeline"
+		},
+		{
+			"default": "1",
+			"fieldname": "enable_weighted_forecast",
+			"fieldtype": "Check",
+			"label": "Enable Weighted Forecast"
+		},
+		{
+			"fieldname": "column_break_pipeline",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "1",
+			"fieldname": "deal_auto_numbering",
+			"fieldtype": "Check",
+			"label": "Deal Auto Numbering"
+		},
+		{
+			"fieldname": "lead_scoring_section",
+			"fieldtype": "Section Break",
+			"label": "Lead Scoring"
+		},
+		{
+			"default": "1",
+			"fieldname": "enable_lead_scoring",
+			"fieldtype": "Check",
+			"label": "Enable Lead Scoring"
+		},
+		{
+			"default": "80",
+			"fieldname": "min_score_for_hot",
+			"fieldtype": "Int",
+			"label": "Min Score for Hot"
+		},
+		{
+			"fieldname": "column_break_scoring",
+			"fieldtype": "Column Break"
+		},
+		{
+			"default": "Daily",
+			"fieldname": "scoring_recalculate_frequency",
+			"fieldtype": "Select",
+			"label": "Scoring Recalculate Frequency",
+			"options": "Daily\nWeekly"
+		},
+		{
+			"fieldname": "reminders_section",
+			"fieldtype": "Section Break",
+			"label": "Reminders"
+		},
+		{
+			"default": "1",
+			"fieldname": "auto_activity_reminder",
+			"fieldtype": "Check",
+			"label": "Auto Activity Reminder"
+		},
+		{
+			"default": "1",
+			"fieldname": "reminder_days_before",
+			"fieldtype": "Int",
+			"label": "Reminder Days Before"
+		}
+	],
+	"index_web_pages_for_search": 0,
+	"issingle": 1,
+	"links": [],
+	"modified": "2026-03-08 00:00:00.000000",
+	"modified_by": "Administrator",
+	"module": "Sales CRM",
+	"name": "CRM Settings",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"print": 1,
+			"read": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"read": 1,
+			"role": "Sales Manager",
+			"write": 1
+		}
+	],
+	"sort_field": "creation",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}
