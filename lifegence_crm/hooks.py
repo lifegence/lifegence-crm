@@ -9,6 +9,9 @@ required_apps = ["frappe", "erpnext"]
 
 export_python_type_annotations = True
 
+# AI Agent Skills (F4 plugin)
+chat_agent_skills = ["lifegence_crm.sales_crm.skills.crm_skills"]
+
 after_install = "lifegence_crm.install.after_install"
 
 add_to_apps_screen = [
