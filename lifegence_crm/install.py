@@ -10,11 +10,15 @@ def after_install():
 
 
 def _init_settings():
-	frappe.reload_doc("crm", "doctype", "crm_settings")
+	frappe.reload_doc("sales_crm", "doctype", "crm_settings")
 	settings = frappe.get_single("CRM Settings")
 	if not settings.default_pipeline:
 		settings.default_pipeline = "標準パイプライン"
+		settings.enable_weighted_forecast = 1
+		settings.deal_auto_numbering = 1
 		settings.enable_lead_scoring = 1
+		settings.min_score_for_hot = 80
+		settings.scoring_recalculate_frequency = "Daily"
 		settings.auto_activity_reminder = 1
 		settings.reminder_days_before = 1
 		settings.save(ignore_permissions=True)
