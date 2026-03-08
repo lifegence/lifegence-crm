@@ -10,8 +10,8 @@ def after_install():
 
 
 def _init_settings():
-	frappe.reload_doc("sales_crm", "doctype", "crm_settings")
-	settings = frappe.get_single("CRM Settings")
+	frappe.reload_doc("sales_crm", "doctype", "sales_crm_settings")
+	settings = frappe.get_single("Sales CRM Settings")
 	if not settings.default_pipeline:
 		settings.default_pipeline = "標準パイプライン"
 		settings.enable_weighted_forecast = 1

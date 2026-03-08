@@ -25,7 +25,7 @@
 			"label": "Pipeline"
 		},
 		{
-			"default": "標準パイプライン",
+			"default": "\u6a19\u6e96\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3",
 			"fieldname": "default_pipeline",
 			"fieldtype": "Data",
 			"label": "Default Pipeline"
@@ -98,7 +98,7 @@
 	"modified": "2026-03-08 00:00:00.000000",
 	"modified_by": "Administrator",
 	"module": "Sales CRM",
-	"name": "CRM Settings",
+	"name": "Sales CRM Settings",
 	"owner": "Administrator",
 	"permissions": [
 		{

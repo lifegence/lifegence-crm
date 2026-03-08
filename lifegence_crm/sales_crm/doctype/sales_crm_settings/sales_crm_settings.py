@@ -1,5 +1,5 @@
 from frappe.model.document import Document
 
 
-class CRMSettings(Document):
+class SalesCRMSettings(Document):
 	pass

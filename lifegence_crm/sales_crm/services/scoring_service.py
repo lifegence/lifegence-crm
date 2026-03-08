@@ -3,7 +3,7 @@ import frappe
 
 def recalculate_lead_scores():
 	"""Recalculate lead scores based on scoring rules."""
-	settings = frappe.get_single("CRM Settings")
+	settings = frappe.get_single("Sales CRM Settings")
 	if not settings.enable_lead_scoring:
 		return
 

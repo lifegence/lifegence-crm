@@ -4,7 +4,7 @@ from frappe.utils import add_days, nowdate
 
 def send_activity_reminders():
 	"""Send reminders for activities with upcoming next_action_date."""
-	settings = frappe.get_single("CRM Settings")
+	settings = frappe.get_single("Sales CRM Settings")
 	if not settings.auto_activity_reminder:
 		return
 

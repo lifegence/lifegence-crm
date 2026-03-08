@@ -37,7 +37,7 @@ scheduler_events = {
 }
 
 fixtures = [
-	"CRM Settings",
+	"Sales CRM Settings",
 	{
 		"dt": "Deal Stage",
 		"filters": [["stage_name", "like", "%"]],

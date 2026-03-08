@@ -3,7 +3,7 @@ import frappe
 
 def on_lead_created(doc, method):
 	"""Auto-score new leads if scoring is enabled."""
-	settings = frappe.get_single("CRM Settings")
+	settings = frappe.get_single("Sales CRM Settings")
 	if not settings.enable_lead_scoring:
 		return
 	# Scoring will be done by the daily job; just log creation

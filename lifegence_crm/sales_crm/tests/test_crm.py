@@ -35,7 +35,7 @@ class TestCRM(FrappeTestCase):
 
 	def test_settings_defaults(self):
 		"""CRM Settings should have correct defaults."""
-		settings = frappe.get_single("CRM Settings")
+		settings = frappe.get_single("Sales CRM Settings")
 		self.assertEqual(settings.enable_lead_scoring, 1)
 		self.assertEqual(settings.auto_activity_reminder, 1)
 		self.assertEqual(settings.enable_weighted_forecast, 1)

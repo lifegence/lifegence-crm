@@ -200,9 +200,9 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "CRM Settings",
+			"label": "Sales CRM Settings",
 			"link_count": 0,
-			"link_to": "CRM Settings",
+			"link_to": "Sales CRM Settings",
 			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Link"
