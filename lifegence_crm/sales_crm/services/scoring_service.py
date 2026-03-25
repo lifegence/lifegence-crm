@@ -26,7 +26,7 @@ def recalculate_lead_scores():
 					total_score += rule.score
 			lead.db_set("lead_score", max(0, min(100, total_score)), update_modified=False)
 		except Exception:
-			pass
+			frappe.log_error(title="CRM Scoring: Failed to score lead {0}".format(getattr(lead, 'name', 'unknown')))
 	frappe.db.commit()
 
 
