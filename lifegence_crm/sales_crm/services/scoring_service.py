@@ -15,18 +15,24 @@ def recalculate_lead_scores():
 	if not rules:
 		return
 
-	leads = frappe.get_all("Lead", fields=["name"])
-	for lead_ref in leads:
+	# Collect all field names needed by rules to fetch in a single query
+	rule_fields = list({rule.field_name for rule in rules})
+	lead_fields = ["name"] + [f for f in rule_fields if f != "name"]
+
+	leads = frappe.get_all("Lead", fields=lead_fields)
+	for lead in leads:
 		try:
-			lead = frappe.get_doc("Lead", lead_ref.name)
 			total_score = 0
 			for rule in rules:
-				field_val = getattr(lead, rule.field_name, None)
+				field_val = lead.get(rule.field_name)
 				if _evaluate_rule(field_val, rule.operator, rule.field_value):
 					total_score += rule.score
-			lead.db_set("lead_score", max(0, min(100, total_score)), update_modified=False)
+			frappe.db.set_value(
+				"Lead", lead.name, "lead_score",
+				max(0, min(100, total_score)), update_modified=False,
+			)
 		except Exception:
-			frappe.log_error(title="CRM Scoring: Failed to score lead {0}".format(getattr(lead, 'name', 'unknown')))
+			frappe.log_error(title="CRM Scoring: Failed to score lead {0}".format(lead.get("name", "unknown")))
 	frappe.db.commit()
 
 
