@@ -7,6 +7,7 @@
  "icon_type": "App",
  "idx": 0,
  "label": "\u55b6\u696d\u7ba1\u7406",
+ "logo_url": "/assets/lifegence_crm/images/crm-logo.svg",
  "link": "/app/crm",
  "link_type": "External",
  "name": "Lifegence CRM",
