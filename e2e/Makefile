@@ -13,7 +13,7 @@ help:
 	@echo "Targets: install | ensure-bench | seed | extract | test | coverage | evidence | report | clean | all"
 
 install:
-	npm ci
+	npm ci --install-links
 	npx playwright install --with-deps chromium
 
 ensure-bench:

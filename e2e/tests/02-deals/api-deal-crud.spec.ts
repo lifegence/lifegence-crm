@@ -1,5 +1,4 @@
-import { test, expect } from '../../fixtures/coverage';
-import { FrappeClient } from '../../utils/frappe-client';
+import { test, expect, FrappeClient } from '@lifegence/e2e-common';
 
 test.describe('Deal — DocType CRUD (P0)', () => {
   let client: FrappeClient;

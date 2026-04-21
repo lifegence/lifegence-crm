@@ -15,6 +15,9 @@
     "seed": "cd ../../../ && bench --site dev.localhost execute lifegence_crm.scripts.seed_e2e.run",
     "full": "npm run seed && npm run extract-apis && npm test"
   },
+  "dependencies": {
+    "@lifegence/e2e-common": "file:../../../../company-os/packages/e2e-common"
+  },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
     "@types/node": "^20.11.0",
