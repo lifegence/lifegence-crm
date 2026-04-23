@@ -156,8 +156,11 @@ jobs:
           bench --site dev.localhost install-app lifegence_crm
 
       - name: Build web assets
+        # Skip the erpnext asset build — it pushes the 7GB runner into OOM
+        # (exit 143). E2E does not touch erpnext Desk pages; orphan-doctype's
+        # BFS treats erpnext 404s as skip, so missing erpnext dist is fine.
         working-directory: frappe-bench
-        run: bench build
+        run: bench build --apps frappe,lifegence_crm
 
       - name: Mark setup wizard complete
         working-directory: frappe-bench
