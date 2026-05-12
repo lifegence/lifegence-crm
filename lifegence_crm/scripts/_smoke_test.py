@@ -54,12 +54,17 @@ def test_agent_response():
 
 def sync_skills():
     """Sync all decorator-registered skills to Chat Agent Skill doctype."""
-    # Trigger external skill discovery (hooks.chat_agent_skills)
+    # Trigger external skill discovery (hooks.chat_agent_skills).
+    # Force-import the sales module explicitly: on long-running workers the
+    # hook may have been resolved before sales_skills.py existed, leaving
+    # the @register_skill decorator unfired.
     import lifegence_agent.skills.builtin  # noqa: F401  — side-effect import
+    import lifegence_crm.sales_crm.skills.sales_skills  # noqa: F401
     from lifegence_agent.skills.registry import SkillRegistry
     before = len(SkillRegistry._builtin_skills)
     SkillRegistry.sync_builtin_to_db()
-    print(f"✓ Skills synced ({before} registered in-memory)")
+    sales_count = sum(1 for k in SkillRegistry._builtin_skills if k.startswith("sales_"))
+    print(f"✓ Skills synced ({before} registered, {sales_count} sales_*)")
 
 
 def list_sales_skills():

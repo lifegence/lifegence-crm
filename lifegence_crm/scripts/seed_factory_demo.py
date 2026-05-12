@@ -157,7 +157,13 @@ def _ensure_item_group(parent_group: str = "All Item Groups") -> None:
 def _ensure_warehouses(company: str) -> tuple[str, str]:
     """Create 本社倉庫 / 大阪倉庫 under {company} if missing. Return their canonical names."""
     abbr = frappe.db.get_value("Company", company, "abbr")
-    parent = f"All Warehouses - {abbr}"
+    # Root warehouse name is locale-dependent ("All Warehouses - X" in en,
+    # "すべての倉庫 - X" in ja). Resolve dynamically instead of hardcoding.
+    parent = frappe.db.get_value(
+        "Warehouse",
+        {"company": company, "is_group": 1, "parent_warehouse": ["in", ["", None]]},
+        "name",
+    ) or f"All Warehouses - {abbr}"
 
     def _make(name: str) -> str:
         canonical = f"{name} - {abbr}"
@@ -727,15 +733,18 @@ def ensure_demo_agent() -> str:
     agent.description = "製造業 B2B 販売管理 デモ用 AI アシスタント"
     agent.is_active = 1
 
-    # If gemini_api_key is unset, copy from the canonical `assistant` agent
-    # (which is provisioned at install time). Lets the demo work on any
-    # site where `assistant` already has a valid key.
-    if not agent.get("gemini_api_key"):
-        donor_key = frappe.db.get_value(
-            "Chat Agent", {"agent_name": "assistant"}, "gemini_api_key"
-        )
-        if donor_key:
-            agent.gemini_api_key = donor_key
+    # If gemini_api_key is unset, copy from the canonical `assistant` agent.
+    # Skip silently if the field doesn't exist on this site's schema (newer
+    # deployments route via LiteLLM virtual key — no per-agent key needed).
+    try:
+        if hasattr(agent, "gemini_api_key") and not agent.get("gemini_api_key"):
+            donor_key = frappe.db.get_value(
+                "Chat Agent", {"agent_name": "assistant"}, "gemini_api_key"
+            )
+            if donor_key:
+                agent.gemini_api_key = donor_key
+    except Exception:
+        pass  # field absent → LiteLLM-only deployment
 
     # Assign all sales_* skills (medium-risk skills auto require approval)
     existing_skills = {row.skill for row in (agent.enabled_skills or [])}
